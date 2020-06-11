@@ -1,0 +1,44 @@
+{
+  "name": "my-data-structure",
+  "version": "1.0.0",
+  "description": "data structure repository",
+  "repository": "git@github.com:jinyongp/Data-Structure-Practice.git",
+  "author": "jinyongp <dev.jinyongp@gmail.com>",
+  "license": "MIT",
+  "lint-staged": {
+    "linters": {
+      "*.js": [
+        "eslint",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "node_modules/"
+    ]
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "plugins": [
+          "@babel/plugin-transform-modules-commonjs"
+        ]
+      }
+    }
+  },
+  "scripts": {
+    "test": "jest",
+    "test:stack": "jest stack/test/stack.test.js",
+    "precommit": "lint-staged"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.10.1",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "husky": ">=4",
+    "jest": "^26.0.1",
+    "lint-staged": "^10.2.9",
+    "prettier": "^2.0.5"
+  }
+}
