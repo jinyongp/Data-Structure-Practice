@@ -16,6 +16,11 @@
       "node_modules/"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-comment": "lint-staged"
+    }
+  },
   "babel": {
     "env": {
       "test": {
