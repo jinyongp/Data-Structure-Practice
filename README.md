@@ -1,6 +1,6 @@
 # Data Structure Practice <!-- omit in TOC -->
 
-자료구조를 구현한 코드의 저장소입니다.
+JavaScript로 자료구조를 구현한 코드의 저장소입니다.
 
 ---
 
@@ -14,6 +14,10 @@
   - [Properties of Queue](#properties-of-queue)
   - [Methods of Queue](#methods-of-queue)
   - [Time Complexity of Queue](#time-complexity-of-queue)
+- [Singly Linked List](#singly-linked-list)
+  - [Properties of Singly Linked List](#properties-of-singly-linked-list)
+  - [Methods of Singly Linked List](#methods-of-singly-linked-list)
+  - [Time Complexity of Singly Linked List](#time-complexity-of-singly-linked-list)
 
 ---
 
@@ -28,11 +32,11 @@
 
 ### Methods of Stack
 
-- [x] `push()`: 아이템 쌓기
+- [x] `push(item)`: 아이템 쌓기
 - [x] `pop()`: 아이템 꺼내기
 - [x] `peek()`: 맨 상단 아이템 확인
 - [x] `isEmpty()`: 스택이 비었는지 확인
-- [ ] `size()`: 스택에 있는 아이템의 갯수
+- [x] `size()`: 스택에 있는 아이템의 갯수
 
 ### Time Complexity of Stack
 
@@ -54,16 +58,42 @@
 
 ### Methods of Queue
 
-- [ ] `add()`: 아이템 추가
-- [ ] `remove()`: 아이템 제거
-- [ ] `peek()`: 맨 앞의 아이템 확인
-- [ ] `isEmpty()`: 큐가 비어있는 확인
-- [ ] `size()`: 큐에 있는 아이템의 갯수
+- [x] `add(item)`: 아이템 추가
+- [x] `remove()`: 아이템 제거
+- [x] `peek()`: 맨 앞의 아이템 확인
+- [x] `isEmpty()`: 큐가 비어있는 확인
+- [x] `size()`: 큐에 있는 아이템의 갯수
 
 ### Time Complexity of Queue
 
   | Access | Insertion | Deletion |
   | :----: | :-------: | :------: |
   |  O(n)  |   O(1)    |   O(1)   |
+
+---
+
+## Singly Linked List
+
+- value와 next 포인터를 가진 Node의 연결로 이루어진 단방향 연결 리스트
+- 배열과 달리 메모리 공간을 효율적으로 사용한다.
+
+### Properties of Singly Linked List
+
+### Methods of Singly Linked List
+
+- [x] `append(item)`: 연결 리스트의 끝에 아이템 추가
+- [x] `remove(item)`: 아이템 삭제
+- [x] `getNodeAt(index)`: 해당 인덱스의 Node를 반환
+- [x] `contains(item)`: 아이템의 존재 여부 확인
+- [x] `indexOf(item)`: Node의 인덱스를 반환. 없을 경우 -1 반환
+- [x] `size()`: 연결 리스트에 있는 아이템의 갯수
+
+### Time Complexity of Singly Linked List
+
+  | Access | Insertion |  Deletion   |
+  | :----: | :-------: | :---------: |
+  |  O(n)  |   O(1)    | O(1) / O(n) |
+
+>삭제의 경우, 이전 Node의 정보를 인자에 포함한다면 `O(1)`의 시간복잡도를 가진다. 반면에 값만 주어진다면, 연결리스트에서 순회하며 해당 값을 찾아야 하므로 `O(n)`의 시간 복잡도를 가진다.
 
 ---
