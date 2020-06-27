@@ -24,14 +24,14 @@ class Stack {
    *
    * push(1);
    *
-   * this.top = { value: 1, next: null}
+   * this.top = { item: 1, next: null}
    *
    * push(2);
    *
-   * this.top = { value: 2, next: { value: 1, next: null } }
+   * this.top = { item: 2, next: { item: 1, next: null } }
    */
-  push(value) {
-    const node = new Node(value);
+  push(item) {
+    const node = new Node(item);
     node.next = this.top;
     this.top = node;
     this._size += 1;
@@ -46,10 +46,10 @@ class Stack {
    */
   pop() {
     if (!this.top) return undefined;
-    const { value } = this.top;
+    const { data } = this.top;
     this.top = this.top.next;
     this._size -= 1;
-    return value;
+    return data;
   }
 
   /**
@@ -61,7 +61,7 @@ class Stack {
    */
   peek() {
     if (!this.top) return undefined;
-    return this.top.value;
+    return this.top.data;
   }
 
   size() {

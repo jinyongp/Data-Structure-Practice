@@ -2,10 +2,10 @@ import Node from './Node';
 
 /**
  * rear -> | <- front     => front === rear -> null
- * rear -> |1| <- front   => front === rear -> { value: 1, next: null }
- * rear -> |2|1| <- front => front !== rear ||>front: { value: 2, next: { value: 1, next: null } }
- *                                          ||>rear: {value: 1, next: null }
- * rear -> |2| <- front   => front === rear -> { value: 2, next: null }
+ * rear -> |1| <- front   => front === rear -> { item: 1, next: null }
+ * rear -> |2|1| <- front => front !== rear ||>front: { item: 2, next: { item: 1, next: null } }
+ *                                          ||>rear: {item: 1, next: null }
+ * rear -> |2| <- front   => front === rear -> { item: 2, next: null }
  * rear -> | <- front     => front === rear -> null
  */
 class Queue {
@@ -19,21 +19,21 @@ class Queue {
    * rear -> | <- front       => front === rear -> null
    * rear -> |1| <- front     => front === rear -> 1
    *
-   * front: { value: 1, next: null }
-   * rear : { value: 1, next: null }
+   * front: { item: 1, next: null }
+   * rear : { item: 1, next: null }
    *
    * rear -> |2|1| <- front   => front !== rear -> front: 1, rear: 2
    *
-   * front: { value: 1, next: { value: 2, next: null } }
-   * rear : { value: 2, next: null }
+   * front: { item: 1, next: { item: 2, next: null } }
+   * rear : { item: 2, next: null }
    *
    * rear -> |3|2|1| <- front => front !== rear -> front: 1, rear: 3
    *
-   * front: { value: 1, next: { value: 2, next: { value: 3, next: null } } }
-   * rear : { value: 3, next: null }
+   * front: { item: 1, next: { item: 2, next: { item: 3, next: null } } }
+   * rear : { item: 3, next: null }
    */
-  add(value) {
-    const node = new Node(value);
+  add(item) {
+    const node = new Node(item);
     if (this.rear) {
       this.rear.next = node;
     }
@@ -47,23 +47,23 @@ class Queue {
   /**
    * rear -> |3|2|1| <- front => front !== rear -> front: 1, rear: 3
    *
-   * front: { value: 1, next: null }
-   * rear : { value: 3, next: { value: 2, next: { value: 1, next: null } } }
+   * front: { item: 1, next: null }
+   * rear : { item: 3, next: { item: 2, next: { item: 1, next: null } } }
    *
    * rear -> |3|2| <- front => front !== rear -> front: 2, rear: 3
    * rear -> |3| <- front => front !== rear -> front: 3, rear: 3
    */
   remove() {
     if (!this.front) return undefined;
-    const { value } = this.front;
+    const { data } = this.front;
     this.front = this.front.next;
     this._size -= 1;
-    return value;
+    return data;
   }
 
   peek() {
     if (!this.front) return undefined;
-    return this.front.value;
+    return this.front.data;
   }
 
   isEmpty() {
