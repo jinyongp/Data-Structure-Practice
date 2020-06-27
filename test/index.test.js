@@ -1,1 +1,2 @@
-require('./Stack.test');
+import './Stack.test';
+import './Queue.test';
