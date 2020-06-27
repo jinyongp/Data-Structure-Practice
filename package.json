@@ -31,12 +31,13 @@
     }
   },
   "scripts": {
-    "test": "jest",
-    "test:stack": "jest stack/test/stack.test.js",
+    "test": "jest test/index.test.js",
+    "test:silent": "jest test/index.test.js --silent",
     "precommit": "lint-staged"
   },
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.10.2",
     "@babel/plugin-transform-modules-commonjs": "^7.10.1",
     "eslint": "^7.2.0",
     "eslint-config-airbnb-base": "^14.2.0",
