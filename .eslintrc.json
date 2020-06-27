@@ -9,5 +9,8 @@
     "ecmaVersion": 11,
     "sourceType": "module"
   },
-  "rules": {}
+  "rules": {
+    "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+    "max-classes-per-file": ["error", 2]
+  }
 }
