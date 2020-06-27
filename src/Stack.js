@@ -1,9 +1,4 @@
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-  }
-}
+import Node from './Node';
 
 /**
  * isEmpty(): true | push(1);        | push(2);        | push(3);        | pop(): 3
@@ -12,7 +7,6 @@ class Node {
  * | |             | |1| <- this.top | |1|             | |1|             | |1|             |
  * |-| <- this.top | |-|             | |-|             | |-|             | |-|             |
  */
-
 class Stack {
   constructor() {
     this.top = 0;

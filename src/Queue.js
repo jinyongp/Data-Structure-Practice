@@ -1,9 +1,4 @@
-class Node {
-  constructor(value) {
-    this.value = value;
-    this.next = null;
-  }
-}
+import Node from './Node';
 
 /**
  * rear -> | <- front     => front === rear -> null
@@ -13,7 +8,6 @@ class Node {
  * rear -> |2| <- front   => front === rear -> { value: 2, next: null }
  * rear -> | <- front     => front === rear -> null
  */
-
 class Queue {
   constructor() {
     this.front = null;
